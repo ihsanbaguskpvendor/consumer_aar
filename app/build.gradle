@@ -19,7 +19,8 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         profile {
@@ -37,36 +38,17 @@ android {
     buildToolsVersion '33.0.0'
 }
 
-String storageUrl = System.env.FLUTTER_STORAGE_BASE_URL ?: "https://storage.googleapis.com"
-repositories {
-    maven {
-        url '/Users/asani/IhsanBagus/Projects/Flutter/deasy/libs/newwg/build/host/outputs/repo'
-//        url '/Users/asani/IhsanBagus/Projects/Flutter/new_wg/build/host/outputs/repo'
-    }
-    maven {
-        url "$storageUrl/download.flutter.io"
-    }
-    google()
-    mavenCentral()
-}
-
 dependencies {
-
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.core:core-ktx:+'
-    implementation 'androidx.core:core-ktx:+'
-    implementation 'androidx.core:core-ktx:+'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     debugImplementation 'com.kreditplus.deasy.newwg.newwg:flutter_debug:1.0'
     profileImplementation 'com.kreditplus.deasy.newwg.newwg:flutter_profile:1.0'
     releaseImplementation 'com.kreditplus.deasy.newwg.newwg:flutter_release:1.0'
-//    debugImplementation 'com.example.new_wg:flutter_debug:1.0'
-//    profileImplementation 'com.example.new_wg:flutter_profile:1.0'
-//    releaseImplementation 'com.example.new_wg:flutter_release:1.0'
-//    implementation files("/Users/asani/IhsanBagus/Projects/Flutter/new_wg/build/host/outputs/repo/com/example/new_wg/flutter_release/1.0/flutter_release-1.0.aar")
+//    implementation files("/Users/ihsanbagus/Projects/Flutter/deasy/libs/newwg/build/host/outputs/repo/com/kreditplus/deasy/newwg/newwg/flutter_release/1.0/flutter_release-1.0.aar")
+//    implementation fileTree(dir: '/Users/ihsanbagus/Projects/Flutter/deasy/libs/newwg/build/host/outputs/repo', include: ['*.aar', '*.jar'], exclude: [])
 }

@@ -12,8 +12,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val flutter: Button = findViewById(R.id.flutter)
+
+        val intent = Intent(this, FlutterXActivity::class.java)
         flutter.setOnClickListener {
-            startActivity(Intent(this, FlutterXActivity::class.java))
+            startActivity(intent)
         }
     }
 }
